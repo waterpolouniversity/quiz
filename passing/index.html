@@ -313,10 +313,11 @@ function finish(){
     <div class="big">${score} / ${order.length}</div>
     <div class="row"><span class="pill">${xp} XP</span><span class="pill">🔥 Best streak ${best}</span></div>
     <div class="actions">
+      ${passed ? `<a class="btn" href="https://www.waterpolouniversity.com/p/spaces/518584" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box">🏅 Post my badge</a>` : ""}
       ${missed.length ? `<button class="btn" id="redo">Practice my ${missed.length} mistake${missed.length>1?"s":""}</button>` : ""}
       <button class="btn ghost" id="again">Take the quiz again</button>
     </div>
-    <p>${passed ? "Go back to the course and click <strong>Mark as complete</strong>. Your certificate arrives by email." : ""} Post your score and your badge in the Waterpolo University community.</p>
+    <p>${passed ? "Take a screenshot of this screen, then tap <strong>Post my badge</strong> and share it in Quiz Badges. Go back to the course and click <strong>Mark as complete</strong>. Your certificate arrives by email." : "Practice your mistakes, rewatch the lessons and try again. You can do it."}</p>
   </div>`;
   const redo = document.getElementById("redo");
   if(redo) redo.addEventListener("click", ()=>{ sheet.hidden=false; start(missed.slice()); });
