@@ -72,58 +72,178 @@ h1{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.15;ma
 
 <script>
 const QUIZ = {
-  course: "1.3a Passing & Receiving",
-  badge: "Passing: Certified",
-  pass: 12,
-  questions: [
-    {scen:"These questions are for a right-handed player. If you're a lefty, just flip left and right.",
-     q:"In the passing position, where are your legs?",
-     o:["Both legs side by side under you","Left leg in front, right leg behind your right hip","Right leg in front, left leg behind","Legs straight down, not moving"],
-     a:1, why:"For a righty: left leg in front, right leg behind your right hip. That gives you a stable base to pass from."},
-    {q:"Where is your non-passing arm (your left arm, for a righty)?",
-     o:["Behind your back","Straight up in the air","In front of you, at about 11 o'clock","Holding the ball with both hands"],
-     a:2, why:"Your left arm goes in front of you at about 11 o'clock. It's there for balance, not for the pass."},
-    {q:"What is your non-passing hand doing?",
-     o:["Resting still on the water","Sculling in small circles to keep you balanced","Pulling water toward you","Waving to the teammate"],
-     a:1, why:"Scull in small circles with that hand. It keeps you balanced and stable while your passing arm does its job."},
-    {q:"Where is the elbow of your passing arm?",
-     o:["Below your shoulder","At chest height","Above your ear line","Tucked into your side"],
-     a:2, why:"Elbow above the ear line. If the elbow drops, the ball drops, and your pass loses accuracy and power."},
-    {q:"Where should your passing wrist face?",
-     o:["Toward the sky","Toward the target","Back toward you","Toward the water"],
-     a:1, why:"Your wrist faces the target. Where the wrist points is where the ball goes."},
-    {scen:"Your elbow is high and your wrist faces the target, but your legs are side by side and your left arm is hanging down.",
-     q:"What's wrong with this passing position?",
-     o:["Nothing, the arm is what matters","Your base: left leg in front, right leg behind, left arm out front sculling","Your elbow should be lower","You should face away from the target"],
-     a:1, why:"The arm is only half of it. Without the leg position and the sculling left arm you have no balance, and the pass gets weak and wild."},
-    {q:"What is the first step of every pass?",
-     o:["Throw as fast as possible","Start from the correct passing position","Look at the defender","Lean back"],
-     a:1, why:"Every good pass starts from the correct position. If the position is wrong, everything after it is harder."},
-    {q:"Where does the lift for your pass come from?",
-     o:["Your arm only","Your legs: use the egg beater to go up","Leaning back","Jumping off the bottom"],
-     a:1, why:"Use your legs to elevate. The higher you are with your egg beater, the easier and more accurate the pass."},
-    {q:"What is the order of the passing arm movement?",
-     o:["Wrist, then forearm, then elbow","Elbow, then forearm, then snap with the wrist","Shoulder only, arm stays straight","Forearm, then elbow"],
-     a:1, why:"Elbow leads, then the forearm, then you finish with a wrist snap. That order gives the pass speed and control."},
-    {scen:"Your passes float slowly and your teammate has to wait for the ball.",
-     q:"What are you probably missing?",
-     o:["A higher arc","The wrist snap at the end","Passing with two hands","A bigger lean back"],
-     a:1, why:"The wrist snap at the end gives the ball its speed. Elbow, forearm, snap."},
-    {q:"Under pressure from a defender, what body position do you hold?",
-     o:["Completely vertical","Completely horizontal","In between vertical and horizontal, in a strong position","Lying on your back"],
-     a:2, why:"Fully vertical you get pushed under; fully horizontal you can't pass. Hold a strong position in between."},
-    {q:"Under pressure, what are your legs doing?",
-     o:["Resting so you save energy","A strong egg beater, pushing","Flutter kicking","Nothing, the arm does the work"],
-     a:1, why:"Strong egg beater, pushing the whole time. Your legs are what hold your position against the defender."},
-    {q:"What is the job of your non-passing arm under pressure?",
-     o:["To hold the ball","To hold the defender and keep distance between you","To splash the defender","To scull behind you"],
-     a:1, why:"Use your non-passing arm to hold the defender and keep the distance between you two, so they can't reach the ball."},
-    {q:"How do you create separation from the defender before you pass?",
-     o:["Swim away freestyle","A strong breaststroke kick","Push them under","Wait for them to let go"],
-     a:1, why:"A strong breaststroke kick pushes you away and creates space between you and the defender."},
-    {q:"What is the right order for pressure passing?",
-     o:["Pass right away, then find position","Strong position and hold the defender, breaststroke kick for separation, reset to the passing position, then pass","Breaststroke kick, then pass without resetting","Turn your back and throw over your shoulder"],
-     a:1, why:"Hold a strong position, create separation with a breaststroke kick, reset into your passing position, then pass. Skipping the reset is what makes passes under pressure go wrong."}
+  "course": "1.3a Passing & Receiving",
+  "badge": "Passing: Certified",
+  "pass": 12,
+  "questions": [
+    {
+      "scen": "These questions are for a right-handed player. If you're a lefty, just flip left and right.",
+      "q": "In the passing position, where are your legs?",
+      "o": [
+        "Both legs under you, side by side",
+        "Left leg behind you, right leg out to the side",
+        "Right leg in front, left leg behind your left hip",
+        "Left leg in front, right leg behind your right hip"
+      ],
+      "a": 3,
+      "why": "For a righty: left leg in front, right leg behind your right hip. That gives you a stable base to pass from."
+    },
+    {
+      "q": "Where is your non-passing arm (your left arm, for a righty)?",
+      "o": [
+        "In front of you, at about 1 o'clock",
+        "In front of you, at about 11 o'clock",
+        "Down by your hip, close to your body",
+        "Out to the side, at about 9 o'clock"
+      ],
+      "a": 1,
+      "why": "Your left arm goes in front of you at about 11 o'clock. It's there for balance, not for the pass."
+    },
+    {
+      "q": "What is your non-passing hand doing?",
+      "o": [
+        "Sculling in small circles to keep you balanced",
+        "Pulling toward you to move you forward",
+        "Held still and flat on the surface",
+        "Pressing down hard on the water to push you up"
+      ],
+      "a": 0,
+      "why": "Scull in small circles with that hand. It keeps you balanced and stable while your passing arm does its job."
+    },
+    {
+      "q": "Where is the elbow of your passing arm?",
+      "o": [
+        "At shoulder height",
+        "Level with your ear",
+        "Above your ear line",
+        "Just below your ear, close to your head"
+      ],
+      "a": 2,
+      "why": "Elbow above the ear line. If the elbow drops, the ball drops, and your pass loses accuracy and power."
+    },
+    {
+      "q": "Where should your passing wrist face?",
+      "o": [
+        "Toward the target",
+        "Toward the water in front of you",
+        "Back toward your head",
+        "Toward the sky"
+      ],
+      "a": 0,
+      "why": "Your wrist faces the target. Where the wrist points is where the ball goes."
+    },
+    {
+      "scen": "Your elbow is high and your wrist faces the target, but your legs are side by side and your left arm is hanging down.",
+      "q": "What's wrong with this passing position?",
+      "o": [
+        "Your wrist should face the sky",
+        "Your elbow needs to be even higher",
+        "Nothing, the arm position is what matters",
+        "Your base: left leg in front, right leg behind, left arm out front sculling"
+      ],
+      "a": 3,
+      "why": "The arm is only half of it. Without the leg position and the sculling left arm you have no balance, and the pass gets weak and wild."
+    },
+    {
+      "q": "What is the first step of every pass?",
+      "o": [
+        "Go up with your egg beater",
+        "Look at your target",
+        "Start from the correct passing position",
+        "Bring your elbow back"
+      ],
+      "a": 2,
+      "why": "Every good pass starts from the correct position. If the position is wrong, everything after it is harder."
+    },
+    {
+      "q": "Where does the lift for your pass come from?",
+      "o": [
+        "Your arm, by throwing harder",
+        "Your legs: egg beater up",
+        "Your non-passing arm pushing down",
+        "Leaning back before the pass"
+      ],
+      "a": 1,
+      "why": "Use your legs to elevate. The higher you are with your egg beater, the easier and more accurate the pass."
+    },
+    {
+      "q": "What is the order of the passing arm movement?",
+      "o": [
+        "Wrist snap first, then elbow and forearm together",
+        "Elbow and wrist together, then the forearm",
+        "Forearm, then elbow, then the wrist snap",
+        "Elbow, then forearm, then snap with the wrist"
+      ],
+      "a": 3,
+      "why": "Elbow leads, then the forearm, then you finish with a wrist snap. That order gives the pass speed and control."
+    },
+    {
+      "scen": "Your passes float slowly and your teammate has to wait for the ball.",
+      "q": "What are you probably missing?",
+      "o": [
+        "The wrist snap at the end",
+        "A higher elbow",
+        "A higher arc on the ball",
+        "More lean back before the pass"
+      ],
+      "a": 0,
+      "why": "The wrist snap at the end gives the ball its speed. Elbow, forearm, snap."
+    },
+    {
+      "q": "Under pressure from a defender, what body position do you hold?",
+      "o": [
+        "Leaning back, away from the defender",
+        "Completely vertical, as high as possible",
+        "In between vertical and horizontal, in a strong position",
+        "Completely horizontal, on your stomach"
+      ],
+      "a": 2,
+      "why": "Fully vertical you get pushed under; fully horizontal you can't pass. Hold a strong position in between."
+    },
+    {
+      "q": "Under pressure, what are your legs doing?",
+      "o": [
+        "Resting, while your arm holds the defender",
+        "A strong egg beater, pushing",
+        "A flutter kick, to stay horizontal",
+        "A breaststroke kick the whole time"
+      ],
+      "a": 1,
+      "why": "Strong egg beater, pushing the whole time. Your legs are what hold your position against the defender."
+    },
+    {
+      "q": "What is the job of your non-passing arm under pressure?",
+      "o": [
+        "To hold the defender and keep distance between you",
+        "To scull and keep your balance",
+        "To hold the ball together with your passing hand",
+        "To push the defender under"
+      ],
+      "a": 0,
+      "why": "Use your non-passing arm to hold the defender and keep the distance between you two, so they can't reach the ball."
+    },
+    {
+      "q": "How do you create separation from the defender before you pass?",
+      "o": [
+        "A faster egg beater",
+        "A few strong freestyle strokes away",
+        "Pushing off the defender with your arm",
+        "A strong breaststroke kick"
+      ],
+      "a": 3,
+      "why": "A strong breaststroke kick pushes you away and creates space between you and the defender."
+    },
+    {
+      "q": "What is the right order for pressure passing?",
+      "o": [
+        "Hold a strong position, breaststroke kick to separate, then pass right away",
+        "Breaststroke kick to separate, hold a strong position, then pass",
+        "Hold a strong position, breaststroke kick to separate, reset to the passing position, then pass",
+        "Reset to the passing position, hold the defender, then pass"
+      ],
+      "a": 2,
+      "why": "Hold a strong position, create separation with a breaststroke kick, reset into your passing position, then pass. Skipping the reset is what makes passes under pressure go wrong."
+    }
   ]
 };
 

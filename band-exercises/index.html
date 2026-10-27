@@ -72,43 +72,123 @@ h1{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.15;ma
 
 <script>
 const QUIZ = {
-  course: "1.2 Band Exercises",
-  badge: "Band Exercises: Certified",
-  pass: 8,
-  questions: [
-    {q:"What is the main reason you do band exercises before practice?",
-     o:["To get tired before you swim","To stabilize and strengthen your shoulder so you avoid injuries","To build big arm muscles","To replace the swimming warm-up"],
-     a:1, why:"Passing, shooting and contact put a lot of stress on the shoulder. Bands wake up the small muscles that keep it stable, so it stays healthy."},
-    {q:"Bands also help your head, not just your shoulder. How?",
-     o:["They let you skip the team warm-up","They're a switch: now it's time to give 100% effort","They help you relax and slow down","They don't, it's only physical"],
-     a:1, why:"Doing the same routine every time tunes your body in and clicks a button in your head: practice starts now, full effort."},
-    {scen:"Your shoulder feels great today and practice starts in 10 minutes.",
-     q:"Do you still do your bands?",
-     o:["No, only when it hurts","Only before games","Yes. Doing them when you feel fine is how you stay fine","Only if the coach is watching"],
-     a:2, why:"Bands before every practice and every game, even when you feel fine. That's the whole point: to stay fine."},
-    {q:"How do most water polo shoulder injuries happen?",
-     o:["Almost always from one bad moment","From weeks of small overload without proper preparation","Only from being hit by another player","Only in goalkeepers"],
-     a:1, why:"Repeated passing and shooting, tired swimming and contact add up. Most kids get hurt from weeks of small overload, not one moment."},
-    {q:"Which band should you use?",
-     o:["The strongest band you can find","A light band you can control through every rep, slow and clean","No band, just arm circles","Whatever band is closest"],
-     a:1, why:"You should feel the muscles working, not pain. Too strong and you rush and cheat the movement. Too weak and you feel nothing."},
-    {scen:"You're rushing through the reps and your shoulders keep shrugging up to your ears.",
-     q:"What's most likely wrong?",
-     o:["The band is too light","The band is too heavy","You need more reps","Nothing, that's normal"],
-     a:1, why:"Rushing and shrugging mean the band is too heavy. Take a lighter one and make every rep slow and controlled."},
-    {q:"During internal and external shoulder rotation, where is your elbow?",
-     o:["Straight out in front of you","Above your head","Tight to your ribs","Wherever feels comfortable"],
-     a:2, why:"Keep the elbow tight to your ribs so the rotation comes from the shoulder. Go slow, especially on the way back."},
-    {q:"What should the shooting simulation look like?",
-     o:["As fast and hard as possible","Your real shooting motion, at a controlled speed with a clean path","Any random arm movement","Only the end of the shot"],
-     a:1, why:"It trains the exact path your arm uses in the pool, so match your real shot motion, clean and controlled."},
-    {scen:"During one exercise you feel a sharp, pinching pain in the front of your shoulder.",
-     q:"What do you do?",
-     o:["Push through it, it's part of training","Stop, use a lighter band and a smaller range, and tell your coach or parent if it continues","Do the exercise faster","Switch to the other arm and keep going"],
-     a:1, why:"Bands should feel warm and stable, never sharp. Lower the resistance and shorten the range, and tell an adult if the pain stays."},
-    {q:"When, and for how long, should you do your bands?",
-     o:["Once a week, 30 minutes","5 to 8 minutes before every practice and every game","Only after practice","Only during the season"],
-     a:1, why:"It's a short routine: 5 to 8 minutes, before every practice and every game. Consistency is what protects the shoulder."}
+  "course": "1.2 Band Exercises",
+  "badge": "Band Exercises: Certified",
+  "pass": 8,
+  "questions": [
+    {
+      "q": "What is the main reason you do band exercises before practice?",
+      "o": [
+        "To stretch your shoulder as far as it can go",
+        "To stabilize and strengthen your shoulder so you avoid injuries",
+        "To warm up your legs before you swim",
+        "To build bigger arm muscles for shooting"
+      ],
+      "a": 1,
+      "why": "Passing, shooting and contact put a lot of stress on the shoulder. Bands wake up the small muscles that keep it stable, so it stays healthy."
+    },
+    {
+      "q": "Bands also help your head, not just your shoulder. How?",
+      "o": [
+        "They calm you down so you can take it easy at first",
+        "They let you skip the warm-up in the water",
+        "They help you focus on your teammates instead of yourself",
+        "They're a switch that tells you practice starts now: 100% effort"
+      ],
+      "a": 3,
+      "why": "Doing the same routine every time tunes your body in and clicks a button in your head: practice starts now, full effort."
+    },
+    {
+      "scen": "Your shoulder feels great today and practice starts in 10 minutes.",
+      "q": "Do you still do your bands?",
+      "o": [
+        "Yes. Doing them when you feel fine is how you stay fine",
+        "Only a short version, since nothing hurts",
+        "No, save them for days when your shoulder feels tight",
+        "Only before games, practice is lower intensity"
+      ],
+      "a": 0,
+      "why": "Bands before every practice and every game, even when you feel fine. That's the whole point: to stay fine."
+    },
+    {
+      "q": "How do most water polo shoulder injuries happen?",
+      "o": [
+        "Mostly from swimming too many laps",
+        "Mostly from one hard shot or one bad hit",
+        "From weeks of small overload without proper preparation",
+        "Mostly from not stretching after practice"
+      ],
+      "a": 2,
+      "why": "Repeated passing and shooting, tired swimming and contact add up. Most kids get hurt from weeks of small overload, not one moment."
+    },
+    {
+      "q": "Which band should you use?",
+      "o": [
+        "A medium band, done as fast as you can",
+        "The strongest band you can finish 3 sets with",
+        "A light band you can control through every rep, slow and clean",
+        "Any band, as long as you feel a burn"
+      ],
+      "a": 2,
+      "why": "You should feel the muscles working, not pain. Too strong and you rush and cheat the movement. Too weak and you feel nothing."
+    },
+    {
+      "scen": "You're rushing through the reps and your shoulders keep shrugging up to your ears.",
+      "q": "What's most likely wrong?",
+      "o": [
+        "The band is too heavy",
+        "The band is too light",
+        "You're doing too few reps",
+        "You need to go even faster to finish"
+      ],
+      "a": 0,
+      "why": "Rushing and shrugging mean the band is too heavy. Take a lighter one and make every rep slow and controlled."
+    },
+    {
+      "q": "During internal and external shoulder rotation, where is your elbow?",
+      "o": [
+        "Slightly away from your body, at chest height",
+        "Up at shoulder height",
+        "Straight, with the arm fully extended",
+        "Tight to your ribs"
+      ],
+      "a": 3,
+      "why": "Keep the elbow tight to your ribs so the rotation comes from the shoulder. Go slow, especially on the way back."
+    },
+    {
+      "q": "What should the shooting simulation look like?",
+      "o": [
+        "Only the end of the shot, the wrist snap",
+        "Your real shooting motion, at a controlled speed with a clean path",
+        "As fast and hard as you can, to build power",
+        "A short half motion, so you don't strain the shoulder"
+      ],
+      "a": 1,
+      "why": "It trains the exact path your arm uses in the pool, so match your real shot motion, clean and controlled."
+    },
+    {
+      "scen": "During one exercise you feel a sharp, pinching pain in the front of your shoulder.",
+      "q": "What do you do?",
+      "o": [
+        "Finish the set, then rest for a minute",
+        "Do the rest of the reps more slowly with the same band",
+        "Skip that exercise today and do the others",
+        "Stop, use a lighter band and a smaller range, and tell your coach or parent if it continues"
+      ],
+      "a": 3,
+      "why": "Bands should feel warm and stable, never sharp. Lower the resistance and shorten the range, and tell an adult if the pain stays."
+    },
+    {
+      "q": "When, and for how long, should you do your bands?",
+      "o": [
+        "5 to 8 minutes before every practice and every game",
+        "10 minutes before games only",
+        "5 to 8 minutes after practice, to cool down",
+        "15 to 20 minutes, a few times a week"
+      ],
+      "a": 0,
+      "why": "It's a short routine: 5 to 8 minutes, before every practice and every game. Consistency is what protects the shoulder."
+    }
   ]
 };
 

@@ -72,42 +72,122 @@ h1{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.15;ma
 
 <script>
 const QUIZ = {
-  course: "1.5 Defensive Fundamentals",
-  badge: "Defense: Certified",
-  pass: 8,
-  questions: [
-    {q:"What is the first rule of defense?",
-     o:["Stay low to save energy","Hips up, all the way, with a strong egg beater","Lie flat on the water","Always face the ball"],
-     a:1, why:"Keep your hips all the way up with your egg beater. High enough that you could read what's written on your speedo."},
-    {scen:"You're guarding your player and your hips keep sinking down behind you.",
-     q:"What do you fix?",
-     o:["Use your hands to stay up","Egg beater harder and bring your hips all the way up","Swim away and reset","Nothing, it doesn't matter on defense"],
-     a:1, why:"Sinking hips make you slow and easy to beat. Egg beater harder and get your hips back up."},
-    {q:"On defense, what are you trying to do with one arm?",
-     o:["Wave in front of their face","Grab the attacker's sculling arm","Hold the lane line","Scull behind you"],
-     a:1, why:"Grab the sculling arm of the offensive player. Without it, they lose their balance and control."},
-    {q:"And with your other arm, what are you trying to do?",
-     o:["Reach for the ball in their hand","Hit their elbow so they drop the ball","Push their head under","Stay out of the water"],
-     a:1, why:"Go for the elbow, not the ball. Hitting the elbow is what makes them drop the ball."},
-    {q:"The attacker already has the ball in their hand. Do you try to steal it?",
-     o:["Yes, grab it right away","No. Don't go for the ball once they have it in their hand","Only with two hands","Only if the referee isn't looking"],
-     a:1, why:"Never go for the ball once it's in their hand. You can only steal it before it arrives."},
-    {q:"Why don't you reach for the ball in the attacker's hand?",
-     o:["It's always a foul","They'll easily turn you and get past you","The ball is too slippery","Your coach doesn't like it"],
-     a:1, why:"If you go for the ball instead of the elbow, they use your reach to turn you, and you're beaten."},
-    {q:"When can you steal the ball?",
-     o:["Any time you want","Before the ball arrives, while it's being passed to them","Only after they shoot","Only on a counterattack"],
-     a:1, why:"Stealing happens before they receive the ball. Once it's in their hand, you switch to making their life hard."},
-    {q:"The attacker has the ball. What is your goal now?",
-     o:["Steal it no matter what","Burn their shot clock, make it hard to pass, and keep playing without a foul","Let them shoot and hope the goalie saves it","Swim back to your own goal"],
-     a:1, why:"Use up their shot clock, make every pass difficult, and stay without a foul as long as you can."},
-    {scen:"You reach for the ball in the attacker's hand and they spin right past you.",
-     q:"What went wrong?",
-     o:["You went for the ball instead of the elbow","Your hips were too high","You held the sculling arm","You didn't reach far enough"],
-     a:0, why:"Going for the ball lets them turn you. Hold the sculling arm and go for the elbow instead."},
-    {q:"Why is playing defense without fouling for a long time so valuable?",
-     o:["It isn't, fouls don't matter","The shot clock runs down, they can't pass easily, and you don't give away an exclusion","It makes the game shorter","It lets you rest"],
-     a:1, why:"Every second without a foul burns their shot clock and keeps you in the water. That pressure forces bad passes and bad shots."}
+  "course": "1.5 Defensive Fundamentals",
+  "badge": "Defense: Certified",
+  "pass": 8,
+  "questions": [
+    {
+      "q": "What is the first rule of defense?",
+      "o": [
+        "Always face the ball",
+        "Keep both hands on the attacker at all times",
+        "Stay vertical and low, ready to react",
+        "Hips up, all the way, with a strong egg beater"
+      ],
+      "a": 3,
+      "why": "Keep your hips all the way up with your egg beater. High enough that you could read what's written on your speedo."
+    },
+    {
+      "scen": "You're guarding your player and your hips keep sinking down behind you.",
+      "q": "What do you fix?",
+      "o": [
+        "Egg beater harder and bring your hips all the way up",
+        "Hold on to the attacker to stay up",
+        "Move closer and lean on the attacker",
+        "Switch to a breaststroke kick"
+      ],
+      "a": 0,
+      "why": "Sinking hips make you slow and easy to beat. Egg beater harder and get your hips back up."
+    },
+    {
+      "q": "On defense, what are you trying to do with one arm?",
+      "o": [
+        "Keep it up to block the pass",
+        "Hold the attacker's hips",
+        "Grab the attacker's sculling arm",
+        "Grab the attacker's shooting arm"
+      ],
+      "a": 2,
+      "why": "Grab the sculling arm of the offensive player. Without it, they lose their balance and control."
+    },
+    {
+      "q": "And with your other arm, what are you trying to do?",
+      "o": [
+        "Reach for the ball",
+        "Hit their elbow so they drop the ball",
+        "Hold their shoulder",
+        "Push down on their back"
+      ],
+      "a": 1,
+      "why": "Go for the elbow, not the ball. Hitting the elbow is what makes them drop the ball."
+    },
+    {
+      "q": "The attacker already has the ball in their hand. Do you try to steal it?",
+      "o": [
+        "Only if they're looking away",
+        "Yes, but only with your stronger hand",
+        "No. Don't go for the ball once it's in their hand",
+        "Yes, if you're quick enough"
+      ],
+      "a": 2,
+      "why": "Never go for the ball once it's in their hand. You can only steal it before it arrives."
+    },
+    {
+      "q": "Why don't you reach for the ball in the attacker's hand?",
+      "o": [
+        "They'll easily turn you and get past you",
+        "It's against the rules",
+        "You lose sight of the other players",
+        "It's always an exclusion"
+      ],
+      "a": 0,
+      "why": "If you go for the ball instead of the elbow, they use your reach to turn you, and you're beaten."
+    },
+    {
+      "q": "When can you steal the ball?",
+      "o": [
+        "When they lift the ball to pass",
+        "Right after they catch it, before they're set",
+        "When they turn to look for a teammate",
+        "Before the ball arrives, while it's being passed to them"
+      ],
+      "a": 3,
+      "why": "Stealing happens before they receive the ball. Once it's in their hand, you switch to making their life hard."
+    },
+    {
+      "q": "The attacker has the ball. What is your goal now?",
+      "o": [
+        "Back off and give them space so you don't foul",
+        "Burn their shot clock, make it hard to pass, and keep playing without a foul",
+        "Foul early to stop the attack",
+        "Go for the ball the moment they lift it"
+      ],
+      "a": 1,
+      "why": "Use up their shot clock, make every pass difficult, and stay without a foul as long as you can."
+    },
+    {
+      "scen": "You reach for the ball in the attacker's hand and they spin right past you.",
+      "q": "What went wrong?",
+      "o": [
+        "You held their shooting arm",
+        "You were too far away from them",
+        "Your hips were too low",
+        "You went for the ball instead of the elbow"
+      ],
+      "a": 3,
+      "why": "Going for the ball lets them turn you. Hold the sculling arm and go for the elbow instead."
+    },
+    {
+      "q": "Why is playing defense without fouling for a long time so valuable?",
+      "o": [
+        "The shot clock runs down, they can't pass easily, and you don't give away an exclusion",
+        "It lets your teammates rest",
+        "The referee is more likely to call a foul on them",
+        "It keeps the game moving faster"
+      ],
+      "a": 0,
+      "why": "Every second without a foul burns their shot clock and keeps you in the water. That pressure forces bad passes and bad shots."
+    }
   ]
 };
 

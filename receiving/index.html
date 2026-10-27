@@ -72,44 +72,124 @@ h1{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.15;ma
 
 <script>
 const QUIZ = {
-  course: "1.3b Passing & Receiving",
-  badge: "Receiving: Certified",
-  pass: 8,
-  questions: [
-    {scen:"These questions are for a right-handed player. If you're a lefty, just flip left and right.",
-     q:"The ball is about to be passed to you. What do you do first?",
-     o:["Stop moving and wait","Egg beater faster to get ready for the ball","Raise both hands","Turn your back to the passer"],
-     a:1, why:"Prepare before the ball arrives: speed up your egg beater so you're high and ready to receive it."},
-    {q:"When the ball comes to you, who should be in control?",
-     o:["The ball: let it come to you","You: you go to the ball and attack it","Your defender","Nobody, it depends on the pass"],
-     a:1, why:"You control the ball, the ball doesn't control you. Go to the ball. We call it attacking the ball."},
-    {scen:"You wait for the ball, it arrives and it pushes you a little to the left.",
-     q:"What did you do wrong?",
-     o:["You didn't attack the ball, so the ball took control of you","You attacked the ball too hard","You absorbed the ball","Nothing, that's normal"],
-     a:0, why:"If the ball moves you, it's in control. Go to the ball and attack it, so you stay in control of the ball."},
-    {q:"What happens when the ball lands in your hand?",
-     o:["You squeeze it as hard as you can","You absorb it: let the ball take your arm back","You push it forward right away","You drop your arm into the water"],
-     a:1, why:"Absorb the ball. Let it carry your arm back, like catching an egg, so it stays in your hand."},
-    {scen:"You wait with your hand still and the ball bounces off your palm into the water.",
-     q:"What did you forget?",
-     o:["To absorb the ball","To close your eyes","To catch with two hands","To sink lower"],
-     a:0, why:"A stiff hand makes the ball bounce off. Absorb it: let the ball take your arm back so it stays in your hand."},
-    {q:"Receiving on the strong side: where are your legs?",
-     o:["Straight down under you","Slightly to the side, facing toward the ball","Behind you, horizontal","Facing away from the ball"],
-     a:1, why:"On the strong side, your legs are slightly to the side and face toward where the ball is coming from."},
-    {q:"What is the right order for receiving on the strong side?",
-     o:["Absorb, then attack, then prepare","Prepare with your egg beater, attack the ball, absorb it","Attack, then prepare","Just catch it, no order"],
-     a:1, why:"Prepare (faster egg beater), attack the ball, absorb it. The same three steps every time."},
-    {scen:"This is for a right-handed player. If you're a lefty, just switch sides.",
-     q:"Receiving on the weak side: where does your left knee point?",
-     o:["At the passer","Toward where you want to pass or shoot next","Down to the bottom of the pool","Behind you"],
-     a:1, why:"Point your left knee toward where you want to pass or shoot next. Your body is already set up for the next play."},
-    {q:"On the weak side, where do you receive the ball?",
-     o:["Far out to the side","Right in front of your face","Behind your head","Under the water"],
-     a:1, why:"Receive it right in front of your face. That's the spot you can control best on the weak side."},
-    {q:"Why receive the weak-side ball in front of your face?",
-     o:["So the defender can see it","So you can bring it back and be right away in the shooting position","So you can pass it with two hands","It doesn't matter where"],
-     a:1, why:"From in front of your face, you bring the ball straight back and you're right away in the shooting position, ready to pass or shoot."}
+  "course": "1.3b Passing & Receiving",
+  "badge": "Receiving: Certified",
+  "pass": 8,
+  "questions": [
+    {
+      "scen": "These questions are for a right-handed player. If you're a lefty, just flip left and right.",
+      "q": "The ball is about to be passed to you. What do you do first?",
+      "o": [
+        "Egg beater faster to get ready for the ball",
+        "Reach your arm out as far as you can",
+        "Stay still so you don't misjudge it",
+        "Turn your body toward the goal"
+      ],
+      "a": 0,
+      "why": "Prepare before the ball arrives: speed up your egg beater so you're high and ready to receive it."
+    },
+    {
+      "q": "When the ball comes to you, who should be in control?",
+      "o": [
+        "The passer: they decide where it lands",
+        "The ball: keep your hand still and let it come",
+        "You: you go to the ball and attack it",
+        "Nobody, you just react when it arrives"
+      ],
+      "a": 2,
+      "why": "You control the ball, the ball doesn't control you. Go to the ball. We call it attacking the ball."
+    },
+    {
+      "scen": "You wait for the ball, it arrives and it pushes you a little to the left.",
+      "q": "What did you do wrong?",
+      "o": [
+        "Your egg beater was too fast",
+        "You reached for the ball too early",
+        "You didn't absorb the ball",
+        "You didn't attack the ball, so the ball took control of you"
+      ],
+      "a": 3,
+      "why": "If the ball moves you, it's in control. Go to the ball and attack it, so you stay in control of the ball."
+    },
+    {
+      "q": "What happens when the ball lands in your hand?",
+      "o": [
+        "You push your hand forward into the ball",
+        "You absorb it: let the ball take your arm back",
+        "You grip it hard so it can't slip",
+        "You pull it straight down onto the water"
+      ],
+      "a": 1,
+      "why": "Absorb the ball. Let it carry your arm back, like catching an egg, so it stays in your hand."
+    },
+    {
+      "scen": "You reach the ball, but your hand is stiff and the ball bounces off your palm into the water.",
+      "q": "What did you forget?",
+      "o": [
+        "To spread your fingers wider",
+        "To speed up your egg beater",
+        "To attack the ball",
+        "To absorb the ball"
+      ],
+      "a": 3,
+      "why": "A stiff hand makes the ball bounce off. Absorb it: let the ball take your arm back so it stays in your hand."
+    },
+    {
+      "q": "Receiving on the strong side: where are your legs?",
+      "o": [
+        "Straight under you, fully vertical",
+        "Slightly to the side, facing toward the ball",
+        "Pointing toward the goal",
+        "Behind you, almost horizontal"
+      ],
+      "a": 1,
+      "why": "On the strong side, your legs are slightly to the side and face toward where the ball is coming from."
+    },
+    {
+      "q": "What is the right order for receiving on the strong side?",
+      "o": [
+        "Prepare with your egg beater, attack the ball, absorb it",
+        "Prepare, wait for the ball, absorb it",
+        "Prepare, absorb it, then attack",
+        "Attack the ball, prepare, absorb it"
+      ],
+      "a": 0,
+      "why": "Prepare (faster egg beater), attack the ball, absorb it. The same three steps every time."
+    },
+    {
+      "scen": "This is for a right-handed player. If you're a lefty, just switch sides.",
+      "q": "Receiving on the weak side: where does your left knee point?",
+      "o": [
+        "Toward the passer",
+        "Straight down to the bottom",
+        "Toward where you want to pass or shoot next",
+        "Toward your defender"
+      ],
+      "a": 2,
+      "why": "Point your left knee toward where you want to pass or shoot next. Your body is already set up for the next play."
+    },
+    {
+      "q": "On the weak side, where do you receive the ball?",
+      "o": [
+        "In front of your left shoulder",
+        "Above your head",
+        "Right in front of your face",
+        "Out to your right side"
+      ],
+      "a": 2,
+      "why": "Receive it right in front of your face. That's the spot you can control best on the weak side."
+    },
+    {
+      "q": "Why receive the weak-side ball in front of your face?",
+      "o": [
+        "So you can bring it back and be right away in the shooting position",
+        "So the defender can't reach it",
+        "So you can catch it with two hands",
+        "So you can see the ball better"
+      ],
+      "a": 0,
+      "why": "From in front of your face, you bring the ball straight back and you're right away in the shooting position, ready to pass or shoot."
+    }
   ]
 };
 

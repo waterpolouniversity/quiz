@@ -72,42 +72,122 @@ h1{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.15;ma
 
 <script>
 const QUIZ = {
-  course: "1.1 Egg Beater",
-  badge: "Egg Beater: Certified",
-  pass: 8,
-  questions: [
-    {q:"What is the main job of the egg beater?",
-     o:["Swimming faster on the counterattack","Keeping you high and stable so your hands are free","Pushing off the bottom of the pool","Resting between plays"],
-     a:1, why:"The egg beater gives you constant, stable lift. That frees your hands to pass, shoot and defend."},
-    {q:"What's the easiest way to learn the egg beater?",
-     o:["Draw circles with both legs at the same time","Flutter kick, like in freestyle","One breaststroke kick at a time, alternating legs","Two breaststroke kicks together"],
-     a:2, why:"Forget the circles. Do one breaststroke kick with one leg, then the other. The circular motion shows up on its own once the rhythm is there."},
-    {q:"Your left leg is pushing out and down. What is your right leg doing?",
-     o:["Also pushing down","Recovering, getting ready for its kick","Staying completely still","Kicking up toward the surface"],
-     a:1, why:"Opposite rhythm: one leg pushes while the other recovers. That's what gives you lift with no dead moments."},
-    {q:"Both of your legs push at the same time. What happens?",
-     o:["You go higher than normal","Nothing changes","You're doing a breaststroke kick, not the egg beater","You move forward faster"],
-     a:2, why:"When both legs kick together, it's a breaststroke kick. The egg beater is one leg at a time, so one leg is always working and you never sink between kicks."},
-    {q:"Where should your knees be?",
-     o:["Glued together","About hip-width apart","As wide as possible","Pointing straight down"],
-     a:1, why:"Knees glued together cost you balance and power. Keep them hip-width apart, like sitting on a small box."},
-    {scen:"You're treading in the deep end and your shoulders keep leaning back. You feel like you're lying on the water.",
-     q:"What do you fix first?",
-     o:["Kick harder and faster","Use your arms more","Chest slightly forward, hips under your shoulders","Lean back even more to float"],
-     a:2, why:"When your hips drift behind you, you end up almost flat. Sit tall like on a high stool, chest slightly forward, hips under you."},
-    {q:"What does a good egg beater look like?",
-     o:["Big, wide kicks with lots of splash","Compact, fast and continuous","Slow kicks with a pause after each one","Only one strong leg doing the work"],
-     a:1, why:"Small, fast and controlled. You should feel steady pressure on the water, not big splashes."},
-    {scen:"Your coach says your arms are doing all the work to keep you up.",
-     q:"Which drill forces your legs to do the job?",
-     o:["Hands on your head for 20–30 seconds","Swimming freestyle laps","Holding the wall with both hands","Sculling with your hands only"],
-     a:0, why:"With your hands on your head, your legs have to do 100% of the work. Holding a ball up and dry works too."},
-    {q:"Why practice the egg beater with one leg at a time?",
-     o:["It's easier, so you can rest","It builds control and strength in each leg on its own","It's how you play in games","It warms up your arms"],
-     a:1, why:"Most players have one weaker leg. One-leg work shows it, and builds control and strength in each leg separately."},
-    {q:"Why does a strong egg beater make your shot better?",
-     o:["It doesn't, shooting is all arm","You stay high and stable, so your arm can move freely over the defender","It makes the ball lighter","It lets you touch the bottom"],
-     a:1, why:"Your legs are the platform. Weak legs mean a low shot and floating passes. Strong legs let you shoot over defenders."}
+  "course": "1.1 Egg Beater",
+  "badge": "Egg Beater: Certified",
+  "pass": 8,
+  "questions": [
+    {
+      "q": "What is the main job of the egg beater?",
+      "o": [
+        "Moving you forward quickly toward the goal",
+        "Helping you sprint back on defense",
+        "Keeping you high and stable so your hands are free",
+        "Keeping your body flat on the surface for balance"
+      ],
+      "a": 2,
+      "why": "The egg beater gives you constant, stable lift. That frees your hands to pass, shoot and defend."
+    },
+    {
+      "q": "What's the easiest way to learn the egg beater?",
+      "o": [
+        "One breaststroke kick at a time, alternating legs",
+        "Draw circles with your legs from the very start",
+        "Two breaststroke kicks together, as fast as possible",
+        "A scissor kick, switching legs every few seconds"
+      ],
+      "a": 0,
+      "why": "Forget the circles. Do one breaststroke kick with one leg, then the other. The circular motion shows up on its own once the rhythm is there."
+    },
+    {
+      "q": "Your left leg is pushing out and down. What is your right leg doing?",
+      "o": [
+        "Pushing down at the same time for extra lift",
+        "Holding still to keep you balanced",
+        "Kicking straight down, like a freestyle kick",
+        "Recovering, getting ready for its own kick"
+      ],
+      "a": 3,
+      "why": "Opposite rhythm: one leg pushes while the other recovers. That's what gives you lift with no dead moments."
+    },
+    {
+      "q": "Both of your legs push at the same time. What happens?",
+      "o": [
+        "You get more lift and stay higher",
+        "You're doing a breaststroke kick, not the egg beater",
+        "It's fine, as long as your knees stay apart",
+        "You're doing a flutter kick"
+      ],
+      "a": 1,
+      "why": "When both legs kick together, it's a breaststroke kick. The egg beater is one leg at a time, so one leg is always working and you never sink between kicks."
+    },
+    {
+      "q": "Where should your knees be?",
+      "o": [
+        "About hip-width apart",
+        "As wide as you can, wider than your shoulders",
+        "Close together, almost touching",
+        "Glued together for a tighter kick"
+      ],
+      "a": 0,
+      "why": "Knees glued together cost you balance and power. Keep them hip-width apart, like sitting on a small box."
+    },
+    {
+      "scen": "You're treading in the deep end and your shoulders keep leaning back. You feel like you're lying on the water.",
+      "q": "What do you fix first?",
+      "o": [
+        "Back straight up and down, chest pulled back",
+        "Push your hips back behind you for more power",
+        "Chest slightly forward, hips under your shoulders",
+        "Lean further back and kick faster"
+      ],
+      "a": 2,
+      "why": "When your hips drift behind you, you end up almost flat. Sit tall like on a high stool, chest slightly forward, hips under you."
+    },
+    {
+      "q": "What does a good egg beater look like?",
+      "o": [
+        "Big, powerful kicks that make a lot of splash",
+        "Compact, fast and continuous",
+        "Fast bursts with a short pause in between",
+        "Wide and slow, with a big push on every kick"
+      ],
+      "a": 1,
+      "why": "Small, fast and controlled. You should feel steady pressure on the water, not big splashes."
+    },
+    {
+      "scen": "Your coach says your arms are doing all the work to keep you up.",
+      "q": "Which drill forces your legs to do the job?",
+      "o": [
+        "Sculling with your hands while you kick",
+        "Holding the wall with both hands",
+        "Egg beater with your hands resting on the water",
+        "Hands on your head for 20–30 seconds"
+      ],
+      "a": 3,
+      "why": "With your hands on your head, your legs have to do 100% of the work. Holding a ball up and dry works too."
+    },
+    {
+      "q": "Why practice the egg beater with one leg at a time?",
+      "o": [
+        "It builds control and strength in each leg on its own",
+        "It teaches you to make circles with your legs",
+        "It's how you egg beater in a game",
+        "It lets one leg rest while the other works"
+      ],
+      "a": 0,
+      "why": "Most players have one weaker leg. One-leg work shows it, and builds control and strength in each leg separately."
+    },
+    {
+      "q": "Why does a strong egg beater make your shot better?",
+      "o": [
+        "It lets you lean back for a longer wind-up",
+        "Your legs push the ball forward when you shoot",
+        "You stay high and stable, so your arm can move freely over the defender",
+        "It keeps you low so the goalie can't read the shot"
+      ],
+      "a": 2,
+      "why": "Your legs are the platform. Weak legs mean a low shot and floating passes. Strong legs let you shoot over defenders."
+    }
   ]
 };
 

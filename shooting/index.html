@@ -72,44 +72,124 @@ h1{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.15;ma
 
 <script>
 const QUIZ = {
-  course: "1.4 Shooting Fundamentals",
-  badge: "Shooting: Certified",
-  pass: 8,
-  questions: [
-    {q:"Which position do you start every shot from?",
-     o:["A completely new shooting stance","The same position as the passing position","Lying on your back","Whatever feels comfortable that day"],
-     a:1, why:"A good shot starts from the same correct position you pass from. If the position is wrong, the shot will be too."},
-    {scen:"These questions are for a right-handed player. If you're a lefty, just switch sides.",
-     q:"In the shooting position, where are your legs?",
-     o:["Both legs side by side under you","Left leg in front, right leg behind your right hip","Right leg in front, left leg behind","Straight down, not moving"],
-     a:1, why:"Left leg in front, right leg behind your right hip. That's your stable base to shoot from."},
-    {q:"Where is your left (non-shooting) arm?",
-     o:["Behind your back","In front of you at about 11 o'clock","Holding the ball too","Straight up in the air"],
-     a:1, why:"Your left arm is in front of you at about 11 o'clock, keeping you balanced while you shoot."},
-    {q:"What does your shooting arm look like before the shot?",
-     o:["Elbow low, wrist facing the sky","Elbow above the ear line, wrist facing the target","Arm straight down by your side","Elbow tucked into your ribs"],
-     a:1, why:"Elbow above the ear line and wrist facing the target. A dropped elbow means a weak, low shot."},
-    {q:"What is the first part of the shooting movement?",
-     o:["Throw as fast as you can","Elevate all the way up with your egg beater","Lean back","Look at the goalie's feet"],
-     a:1, why:"Go all the way up with your egg beater. You should always shoot from your highest position."},
-    {scen:"You shoot from low in the water and the goalie blocks almost everything.",
-     q:"What do you change first?",
-     o:["Shoot harder","Get higher with your egg beater before you shoot","Close your eyes","Shoot with two hands"],
-     a:1, why:"Shoot from your highest position. The higher you are, the more of the goal you see and the harder it is to block."},
-    {q:"What is the order of the arm movement in the shot?",
-     o:["Wrist, forearm, elbow","Elbow, forearm, then snap with the wrist","Shoulder only, straight arm","Forearm first, then elbow"],
-     a:1, why:"Elbow leads, then the forearm, then you snap with the wrist. The same order as the pass, just with more power."},
-    {q:"How do you add power from your whole body into the shot?",
-     o:["Swing your arm faster","Engage your abs at the end of the shot","Kick your legs harder after the shot","Hold your breath"],
-     a:1, why:"Engage your abs at the end of the shot. That's what brings the power of your whole body into the ball, not just your arm."},
-    {scen:"Your arm is strong, but your shot still feels weak.",
-     q:"What are you probably missing?",
-     o:["Engaging your abs at the end of the shot","A bigger arc","A longer wind-up","Shooting with your eyes closed"],
-     a:0, why:"A strong arm alone isn't enough. Engage your abs at the end of the shot to add the power from your whole body."},
-    {scen:"You aim for the top corner, but the ball keeps going above the cage.",
-     q:"What decides where the ball goes?",
-     o:["Your legs","Your wrist snap: like a sniper, snap toward where you want the ball to go","How hard you throw","Your left arm"],
-     a:1, why:"The wrist snap is like a sniper. It decides where the ball goes. If the ball flies over the cage, finish with a full wrist snap toward the spot you're aiming for."}
+  "course": "1.4 Shooting Fundamentals",
+  "badge": "Shooting: Certified",
+  "pass": 8,
+  "questions": [
+    {
+      "q": "Which position do you start every shot from?",
+      "o": [
+        "Square to the goal, both legs under you",
+        "The same position as the passing position",
+        "Leaning back, legs out in front of you",
+        "Facing the goalie with both arms up"
+      ],
+      "a": 1,
+      "why": "A good shot starts from the same correct position you pass from. If the position is wrong, the shot will be too."
+    },
+    {
+      "scen": "These questions are for a right-handed player. If you're a lefty, just switch sides.",
+      "q": "In the shooting position, where are your legs?",
+      "o": [
+        "Both legs under you, side by side",
+        "Right leg in front, left leg behind your left hip",
+        "Left leg in front, right leg behind your right hip",
+        "Left leg behind you, right leg out to the side"
+      ],
+      "a": 2,
+      "why": "Left leg in front, right leg behind your right hip. That's your stable base to shoot from."
+    },
+    {
+      "q": "Where is your left (non-shooting) arm?",
+      "o": [
+        "In front of you at about 11 o'clock",
+        "Out to the side at about 9 o'clock",
+        "Pushing down on the water under you",
+        "Behind you, for balance"
+      ],
+      "a": 0,
+      "why": "Your left arm is in front of you at about 11 o'clock, keeping you balanced while you shoot."
+    },
+    {
+      "q": "What does your shooting arm look like before the shot?",
+      "o": [
+        "Elbow below the ear, wrist turned in",
+        "Elbow at shoulder height, wrist facing the target",
+        "Elbow above the ear line, wrist facing the sky",
+        "Elbow above the ear line, wrist facing the target"
+      ],
+      "a": 3,
+      "why": "Elbow above the ear line and wrist facing the target. A dropped elbow means a weak, low shot."
+    },
+    {
+      "q": "What is the first part of the shooting movement?",
+      "o": [
+        "Lean back to load the shot",
+        "Bring your elbow back",
+        "Pick your spot on the goal",
+        "Elevate all the way up with your egg beater"
+      ],
+      "a": 3,
+      "why": "Go all the way up with your egg beater. You should always shoot from your highest position."
+    },
+    {
+      "scen": "You shoot from low in the water and the goalie blocks almost everything.",
+      "q": "What do you change first?",
+      "o": [
+        "Get higher with your egg beater before you shoot",
+        "Shoot harder",
+        "Shoot faster, before the goalie is set",
+        "Lean back more for a bigger wind-up"
+      ],
+      "a": 0,
+      "why": "Shoot from your highest position. The higher you are, the more of the goal you see and the harder it is to block."
+    },
+    {
+      "q": "What is the order of the arm movement in the shot?",
+      "o": [
+        "Elbow and wrist together, then the forearm",
+        "Wrist snap first, then elbow and forearm together",
+        "Elbow, then forearm, then snap with the wrist",
+        "Forearm, then elbow, then the wrist snap"
+      ],
+      "a": 2,
+      "why": "Elbow leads, then the forearm, then you snap with the wrist. The same order as the pass, just with more power."
+    },
+    {
+      "q": "How do you add power from your whole body into the shot?",
+      "o": [
+        "Lean back further before you shoot",
+        "Engage your abs at the end of the shot",
+        "Kick your legs harder during the shot",
+        "Swing your arm faster"
+      ],
+      "a": 1,
+      "why": "Engage your abs at the end of the shot. That's what brings the power of your whole body into the ball, not just your arm."
+    },
+    {
+      "scen": "Your arm is strong, but your shot still feels weak.",
+      "q": "What are you probably missing?",
+      "o": [
+        "Engaging your abs at the end of the shot",
+        "A bigger wind-up",
+        "A higher elbow",
+        "A faster arm swing"
+      ],
+      "a": 0,
+      "why": "A strong arm alone isn't enough. Engage your abs at the end of the shot to add the power from your whole body."
+    },
+    {
+      "scen": "You aim for the top corner, but the ball keeps going above the cage.",
+      "q": "What decides where the ball goes?",
+      "o": [
+        "Your elbow position",
+        "Your wrist snap: like a sniper, snap toward where you want the ball to go",
+        "How high you elevate",
+        "How hard you throw"
+      ],
+      "a": 1,
+      "why": "The wrist snap is like a sniper. It decides where the ball goes. If the ball flies over the cage, finish with a full wrist snap toward the spot you're aiming for."
+    }
   ]
 };
 
