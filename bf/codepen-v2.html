@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Waterpolo University Black Friday Countdown</title>
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Black Friday: Waterpolo University $75/year">
+<meta property="og:description" content="Countdown to the Waterpolo University Black Friday offer.">
+<style>
+  :root{--navy:#070c33;--blue:#1234da;--teal:#06a0c1;--gold:#ffc83d;--coral:#ff3b5c}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:transparent}
+  body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#fff}
+  .card{position:relative;overflow:hidden;border-radius:24px;padding:36px 22px 30px;text-align:center;
+    background:radial-gradient(600px 300px at 100% 0%,rgba(6,160,193,.55),transparent 60%),
+               radial-gradient(500px 300px at 0% 100%,rgba(255,59,92,.35),transparent 60%),
+               linear-gradient(135deg,var(--navy),var(--blue))}
+  .label{font-weight:800;letter-spacing:.22em;font-size:13px;color:var(--gold);text-transform:uppercase}
+  .title{font-weight:800;font-size:clamp(22px,4vw,34px);margin:8px 0 20px}
+  .clock{display:flex;justify-content:center;gap:clamp(8px,2vw,18px)}
+  .unit{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:16px;
+    width:clamp(68px,18vw,128px);padding:14px 0 10px;backdrop-filter:blur(4px)}
+  .num{font-weight:800;font-size:clamp(34px,8vw,64px);line-height:1;font-variant-numeric:tabular-nums}
+  .num.tick{animation:pop .35s ease}
+  @keyframes pop{0%{transform:scale(1.18);color:var(--gold)}100%{transform:scale(1)}}
+  .cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#cfd4ff;margin-top:6px}
+  .note{margin-top:16px;font-size:15px;color:#e4e8ff}
+  .note b{color:var(--gold)}
+  .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:20px}
+  .btn{display:inline-block;font-weight:800;text-decoration:none;padding:15px 30px;border-radius:999px;font-size:17px;transition:transform .15s,filter .3s,opacity .3s}
+  .btn.main{background:var(--gold);color:var(--navy);box-shadow:0 10px 30px rgba(255,200,61,.35)}
+  .btn.alt{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+  .btn:hover{transform:translateY(-2px) scale(1.03)}
+  .locked .btn{filter:blur(2px);opacity:.55;pointer-events:none;cursor:not-allowed}
+  .lockmsg{display:none;margin-top:10px;font-size:14px;font-weight:700;color:var(--gold)}
+  .locked + .lockmsg{display:block}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,2vw,16px);margin-top:26px}
+  .stat{border-radius:18px;padding:18px 8px;transition:transform .2s, box-shadow .2s;cursor:default}
+  .stat:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 16px 30px rgba(0,0,0,.25)}
+  .s1{background:linear-gradient(135deg,#ffc83d,#ff9f1c);color:var(--navy)}
+  .s2{background:linear-gradient(135deg,#ff3b5c,#ff7a59)}
+  .s3{background:linear-gradient(135deg,#06a0c1,#2bd4c4);color:var(--navy)}
+  .s4{background:linear-gradient(135deg,#7b5cff,#3b6cff)}
+  .big{font-weight:800;font-size:clamp(30px,6.5vw,58px);line-height:1}
+  .what{font-size:clamp(12px,2.2vw,15px);font-weight:600;margin-top:8px;line-height:1.3}
+  @media (max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}.card{padding:28px 14px 22px}}
+</style></head>
+<body>
+<div class="card">
+  <div class="label" id="label">Black Friday opens in</div>
+  <div class="title" id="title">$250 → $75 a year</div>
+  <div class="clock">
+    <div class="unit"><div class="num" id="d">00</div><div class="cap">Days</div></div>
+    <div class="unit"><div class="num" id="h">00</div><div class="cap">Hours</div></div>
+    <div class="unit"><div class="num" id="m">00</div><div class="cap">Minutes</div></div>
+    <div class="unit"><div class="num" id="s">00</div><div class="cap">Seconds</div></div>
+  </div>
+  <div class="note" id="note">Opens <b>Sunday, Nov 15</b>. Ends <b>Monday, Nov 30</b> at midnight ET.</div>
+  <div class="cta locked" id="cta">
+    <a class="btn main" id="btnMain" target="_top">Join for $75/year</a>
+    <a class="btn alt" id="btnAlt" target="_top">I'm a member: switch to $75</a>
+  </div>
+  <div class="lockmsg">🔒 Unlocks Sunday, Nov 15</div>
+
+  <div class="stats" id="stats">
+    <div class="stat s1"><div class="big" data-to="30" data-suffix="+">0</div><div class="what">Video courses</div></div>
+    <div class="stat s2"><div class="big" data-to="350" data-suffix="+">0</div><div class="what">Step-by-step lessons</div></div>
+    <div class="stat s3"><div class="big" data-to="10" data-prefix="" data-suffix="">0</div><div class="what">Dryland programs, 12U &amp; 14U</div></div>
+    <div class="stat s4"><div class="big">1-on-1</div><div class="what">Feedback on your videos</div></div>
+  </div>
+</div>
+<script>
+  // === Links for the buttons (they only work from Nov 15) ===
+  const JOIN_LINK   = 'https://www.waterpolouniversity.com/black-friday';
+  const SWITCH_LINK = 'mailto:marko@waterpolouniversity.com?subject=Switch%20me%20to%20the%20%2475%20Black%20Friday%20price';
+  // All times Eastern (UTC-5 in November)
+  const OPEN = Date.parse('2026-11-15T00:00:00-05:00');
+  const END  = Date.parse('2026-11-30T23:59:59-05:00');
+  const $ = id => document.getElementById(id);
+  const pad = n => String(n).padStart(2,'0');
+  const last = {};
+  function set(id,v){ if(last[id]!==v){ const el=$(id); el.textContent=v; el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick'); last[id]=v; } }
+  function lock(on){
+    const c=$('cta'); if(on===c.classList.contains('locked') && c.dataset.init) return; c.dataset.init=1;
+    c.classList.toggle('locked',on);
+    if(on){ $('btnMain').removeAttribute('href'); $('btnAlt').removeAttribute('href'); }
+    else { $('btnMain').href=JOIN_LINK; $('btnAlt').href=SWITCH_LINK; }
+  }
+  function tick(){
+    const now = Date.now();
+    let target;
+    if (now < OPEN){ target = OPEN; $('label').textContent='Black Friday opens in'; lock(true); }
+    else if (now < END){ target = END; $('label').textContent='Offer ends in'; $('title').textContent='$75 a year. Now open.';
+      $('note').innerHTML='Ends <b>Monday, Nov 30</b> at midnight ET. Then it goes back to $250.'; lock(false); }
+    else { $('label').textContent='Black Friday'; $('title').textContent='This offer has ended'; $('note').textContent='Thank you to everyone who joined!'; $('cta').style.display='none';
+      ['d','h','m','s'].forEach(k=>set(k,'00')); return; }
+    let t = Math.max(0, Math.floor((target-now)/1000));
+    set('d',pad(Math.floor(t/86400))); t%=86400;
+    set('h',pad(Math.floor(t/3600))); t%=3600;
+    set('m',pad(Math.floor(t/60)));
+    set('s',pad(t%60));
+  }
+  tick(); setInterval(tick,1000);
+
+  // Count-up numbers when visible
+  function countUp(el){
+    const to=+el.dataset.to, suf=el.dataset.suffix||'', dur=1400, t0=performance.now();
+    (function step(t){ const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(to*e)+suf; if(p<1) requestAnimationFrame(step); })(t0);
+  }
+  const nums=[...document.querySelectorAll('.big[data-to]')];
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ countUp(e.target); io.unobserve(e.target);} }),{threshold:.4});
+    nums.forEach(n=>io.observe(n));
+  } else nums.forEach(countUp);
+</script>
+</body></html>

@@ -1,0 +1,31 @@
+<!-- WPU Black Friday countdown: only runs on /black-friday -->
+<script>
+(function(){
+  if (!/^\/black-friday\/?$/.test(location.pathname)) return;
+  function place(){
+    if (document.getElementById('wpu-bf-countdown')) return true;
+    var els = document.querySelectorAll('body *'), anchor = null;
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      if (el.children.length === 0 && el.textContent.trim() === 'Black Friday countdown') { anchor = el; break; }
+    }
+    if (!anchor) return false;
+    var sec = anchor.closest('section') || anchor.parentElement.parentElement;
+    var f = document.createElement('iframe');
+    f.id = 'wpu-bf-countdown';
+    f.src = 'https://waterpolouniversity.github.io/quiz/bf/';
+    f.title = 'Black Friday countdown';
+    f.setAttribute('scrolling', 'no');
+    f.style.cssText = 'display:block;width:100%;max-width:1100px;height:560px;border:0;margin:24px auto 0;background:transparent';
+    var box = anchor.parentElement; // the header block that holds the title
+    box.parentElement.insertBefore(f, box.nextSibling);
+    window.addEventListener('message', function(e){
+      if (e.data && e.data.wpuCountdownHeight) f.style.height = (e.data.wpuCountdownHeight + 4) + 'px';
+    });
+    return true;
+  }
+  function tryPlace(n){ if (!place() && n > 0) setTimeout(function(){ tryPlace(n-1); }, 300); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ tryPlace(20); });
+  else tryPlace(20);
+})();
+</script>
